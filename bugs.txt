@@ -1,0 +1,37 @@
+-sometimes blocks don't snap to grid quick enough, and
+the tile it was intially on gets lit up (because of high acceleration,
+probably).
+
+--game flickers and spazzes if you hit TAB key and debug after visiting the
+options menu
+
+-flashlights initially appear at wrong angle and wrong color.
+
+-weird tile graphical glitch where sometimes the tiles appear to
+flicker or blend together. (somewhat fixed 10/22/17)
+
+-in the pause menu, sometimes the explosion sound doesn't play,
+because the hover sound is still playing. (somewhat fixed 11/7/17, different sound)
+
+-tile allocation is not perfect (set tiles to visible to test). There's
+a gap between areas when a new chunk of tiles are created and the 
+old ones are deleted. (somwhat fixed 10/22/17)
+
+-menu screen font color changes to black once the game has been restarted 
+from the arena menu. (fixed, 10/25/17)
+
+-numbers getting cut off, presumably because the surface is too small (fixed, 10/23/17,
+yes, surface was too small) 
+
+-fix the block glowing problem in the arena, again. (fixed, 10/24/17, set glowable to false
+each step)
+
+-turrets sometimes intially appear white
+
+-blocks placed on top of numbers do not glow initially.
+
+-some of the tanks are shooting themselves
+
+
+
+
