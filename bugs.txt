@@ -2,10 +2,6 @@
 the tile it was intially on gets lit up (because of high acceleration,
 probably).
 
--blocks placed on top of numbers do not glow initially.
-
--some of the tanks are shooting themselves
-
 -game flickers and spazzes if you hit TAB key and debug after visiting the
 options menu because both modes are trying to adjust the screen size. (fixed, 5/26/18)
 
