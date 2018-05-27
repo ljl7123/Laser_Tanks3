@@ -117,10 +117,11 @@ cooldown -=1 * per_second;
 
 //kinematics 
 //speed in a particual direction increases by a constant each step (acceleration, can be negative)
+
 tank_hspeed = h_acceleration * 1;
 tank_vspeed = v_acceleration * 1; 
 
-x += tank_hspeed;
+x += tank_hspeed;  
 y += tank_vspeed;
 
 //Set the position, image_blend, direction, and image angle of my turret instance 
@@ -131,6 +132,7 @@ if (instance_exists(my_turret)){
     my_turret.image_blend = image_blend;
 }
 
+//flashlight code
 if (instance_exists(my_flashlight)){
     my_flashlight.x = x; 
     my_flashlight.y = y; 
@@ -141,10 +143,26 @@ if (instance_exists(my_flashlight)){
     }
 }
 
+//so that the tanks can't place infinite blocks
 block_cooldown -= per_second;
 
+//this causes the acceleration to go to zero
+//from the 'appropriate direction' on the number line
+  if (v_acceleration != 0){
+    if (v_acceleration &gt; 0){
+        v_acceleration -= per_second;
+        if (v_acceleration &lt; .1){
+            v_acceleration = 0;
+        }
+    } else {
+         v_acceleration += per_second;
+         if (v_acceleration &gt; -.1){
+            v_acceleration = 0;
+        }
+    }
+}
+
 if (h_acceleration != 0){
-    
     if (h_acceleration &gt; 0){
         if (h_acceleration &lt; .1){
             h_acceleration = 0;
@@ -158,19 +176,7 @@ if (h_acceleration != 0){
     }
 }
 
-if (v_acceleration != 0){
-    if (v_acceleration &gt; 0){
-        v_acceleration -= per_second;
-        if (v_acceleration &lt; .1){
-            v_acceleration = 0;
-        }
-    } else {
-         v_acceleration += per_second;
-         if (v_acceleration &gt; -.1){
-            v_acceleration = 0;
-        }
-    }
-}
+
 
  
 

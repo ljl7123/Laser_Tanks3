@@ -77,21 +77,15 @@ heartbeat_length = heartbeat_length_default;
 event_inherited();
 
 
-//for each check if wasd or d pad is being held down.
+//for each check if wasd is being held down.
 if (keyboard_check(ord("W"))){
-   y -=3
-}  
-
-if (keyboard_check(ord("A"))){
-   x-=3
-}  
-
-if (keyboard_check(ord("S"))){
-  y+=3  
-}  
-
-if (keyboard_check(ord("D"))){
-  x+=3
+   v_acceleration = -5;
+} else if (keyboard_check(ord("A"))){
+   h_acceleration = -5;
+} else if (keyboard_check(ord("S"))){
+  v_acceleration = 5;
+} else if (keyboard_check(ord("D"))){
+  h_acceleration = 5;
 }
 
 //point the image toward the left analogue stick 
@@ -173,8 +167,7 @@ if (keyboard_check_released(ord("F"))){
     } else {
         flashlight_on = false;  
         audio_play_sound(sound_flashlight_off, 0 , 0);
-        instance_destroy(my_flashlight);
-         
+        instance_destroy(my_flashlight);    
     }
 }
 
