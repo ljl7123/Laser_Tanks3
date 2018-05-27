@@ -25,8 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>owner = noone;
-
+            <string>//it should belong to nobody until the tank assigns itself to it in its code
+owner = noone;
+//the flashlight needs to be invisible at the beginning
+image_alpha = 0;
 
 </string>
           </argument>
@@ -54,10 +56,10 @@
     image_blend = owner.image_blend;
 }
 
-//only draw if the flashlight has color
-if (image_blend != c_white){
-    image_alpha = .2;
-}
+image_alpha = .2;
+
+
+    
 </string>
           </argument>
         </arguments>

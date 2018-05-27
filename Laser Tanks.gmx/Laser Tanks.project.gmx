@@ -119,7 +119,7 @@
       <object>objects\object_block_arena</object>
       <object>objects\object_block_fragment</object>
     </objects>
-    <objects name="tank">
+    <objects name="tank_stuff">
       <object>objects\object_flashlight</object>
       <object>objects\object_tank_parent</object>
       <object>objects\object_tank_turret</object>
