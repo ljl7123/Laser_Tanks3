@@ -53,7 +53,13 @@ audio = 1;
           <argument>
             <kind>1</kind>
             <string>generate_tiles();
-window_set_fullscreen(fullscreen);
+
+//So that the debug mode full screen, and the options menu full screen
+//do not compete and cause the screen to flicker.
+//Not to be confused with built-in gamemaker 'debug_mode'
+if (global.debug == false){ 
+    window_set_fullscreen(fullscreen);
+}
 audio_master_gain(audio);
 if (audio == 0){
     audio_stop_all();
