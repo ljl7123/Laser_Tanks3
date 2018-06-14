@@ -157,10 +157,10 @@ block_cooldown -= per_second;
     } else {
          v_acceleration += per_second;
          if (v_acceleration &gt; -.1){
-            v_acceleration = 0;
+            v_acceleration = 0; //zeros it so it doesn't go to far in other direction
         }
-    }
-}
+    }//end else (less than 0)
+}//end if 
 
 if (h_acceleration != 0){
     if (h_acceleration &gt; 0){
